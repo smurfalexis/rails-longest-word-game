@@ -1,0 +1,10 @@
+
+<% if @result == 'not a word' %>
+<p>Sorry, but <strong><%="#{@word}"%></strong> does not seem to be a valid English word</p>
+<% elsif @result == 'not in grid' %>
+<p>Sorry, but <strong><%="#{@word}"%></strong> can't be built out of <%="#{@grid.split('').join(', ')}"%></p>
+<% elsif @result == 'valid' %>
+<p>Congratulations, <strong><%="#{@word}"%></strong> is a valid English word, your score is <%="#{@word.length}"%></p>
+<% end %>
+
+<%= link_to 'Play again', new_path %>
